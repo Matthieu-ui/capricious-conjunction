@@ -1,0 +1,67 @@
+---
+import PageLayout from "@/layouts/Base";
+import PostPreview from "@/components/blog/PostPreview";
+import Pagination from "@/components/Paginator";
+import { getUniqueTags, sortMDByDate } from "@/utils";
+import type { Post } from "@/data/posts";
+import type { GetStaticPaths, MDXInstance, Page } from "@/data/shared";
+
+export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
+	const allPosts = await Astro.glob<Post>("../../posts/*.mdx");
+	const allPostsByDate = sortMDByDate(allPosts);
+	const uniqueTags = getUniqueTags(allPostsByDate);
+
+	return uniqueTags.map((tag) => {
+		const filterPosts = allPostsByDate.filter((post) => post.frontmatter.tags?.includes(tag));
+		return paginate(filterPosts, {
+			params: { tag },
+			pageSize: 10,
+		});
+	});
+};
+
+interface Props {
+	page: Page<MDXInstance<Post>>;
+}
+
+const { page } = Astro.props;
+const { tag } = Astro.params;
+
+const meta = {
+	title: `Tag: ${tag}`,
+	description: `View all posts with the tag - ${tag}`,
+};
+
+const paginationProps = {
+	...(page.url.prev && {
+		prevUrl: {
+			url: page.url.prev,
+			text: `← Previous Tags`,
+		},
+	}),
+	...(page.url.next && {
+		nextUrl: {
+			url: page.url.next,
+			text: `Next Tags →`,
+		},
+	}),
+};
+---
+
+<PageLayout meta={meta}>
+	<h1 class="title mb-6 flex items-center">
+		Tag: {tag}
+	</h1>
+	<section aria-label="Blog post list">
+		<ul class="space-y-8 text-left">
+			{
+				page.data.map((p) => (
+					<li class="flex flex-wrap items-center gap-x-2 [&_q]:w-full">
+						<PostPreview post={p} as="h2" withDesc />
+					</li>
+				))
+			}
+		</ul>
+		<Pagination {...paginationProps} />
+	</section>
+</PageLayout>
