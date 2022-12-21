@@ -4,6 +4,7 @@ interface Post extends BaseFrontmatter {
 	title: string;
 	description: string;
 	publishDate: Date;
+	type: string;
 	tags?: string[];
 }
 

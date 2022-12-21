@@ -1,3 +1,6 @@
+---
+import { Icon } from 'astro-icon'
+---
 <div class="flex flex-wrap items-center gap-x-4 sm:items-center">
 	<p>Find me on</p>
 	<ul class="flex flex-1 items-center gap-x-4 sm:flex-initial">
@@ -58,9 +61,15 @@
 			</a>
 		</li>
 		<li>
+			<a class="inline-block p-2 sm:hover:text-link" href="#">
+				<Icon  class="h-6 w-6" name="mdi:steam-box" />
+			</a>
+
+		</li>
+		<li>
 			<a
 				class="inline-block p-2 sm:hover:text-link"
-				href="https://twitter.com/fattmelker"
+				href="https://discord.com/users/globz#6294"
 				target="_blank"
 				rel="noopener noreferrer"
 			>
@@ -114,5 +123,6 @@
 				<span class="sr-only">Email</span>
 			</a>
 		</li>
+		
 	</ul>
 </div>
