@@ -4,55 +4,67 @@ import { Image } from "@astrojs/image/components";
 import aboutImg from "../assets/mattweb4.gif";
 
 const meta = {
-	title: "About",
-	description: "I'm a web developer and designer based in WA. I love building websites and apps.",
+  title: "About",
+  description:
+    "I'm a web developer and designer based in WA. I love building websites and apps.",
 };
 ---
 
 <PageLayout meta={meta}>
-	<div class="space-y-4">
-		
+  <div class="space-y-4 sm:space-y-2 ">
+    <h1 class="title">About</h1>
 
-		<h1 class="title">About</h1>
-		<p>
-			Hi, 
-		</p>
 
-		<p>Here is some more information about me! </p>
+    <p class="font-bold">Here is some more information about me!</p>
+    <ul class="list-inside list-disc">
+      <li>
+        I'm a huge fan of the web and all things JavaScript. I'm also a big fan
+        of the Svelte, React, and Astro.
+      </li>
+      <li>
+        Open source is my jam. I love contributing to open source projects and
+        I'm always looking for new projects to contribute to.
+      </li>
+      <li>
+        I am seeking a full-time position as a front-end developer. I am
+        currently located in the Seattle area, but I am open to remote work.
+      </li>
+      <li>I enjoy hiking, pets, games and spending time with my family.</li>
+    </ul>
+	</div>
+
+	<div class="space-y-4 sm:space-y-2">
+    <hr class=" m-4 "/>
+		<h2 class="title pt-4">Education</h2>
 		<ul class="list-inside list-disc">
 			<li>
-				I'm a huge fan of the web and all things JavaScript. I'm also a big fan of the Svelte, React, and Astro.</li>
-			<li>
-				Open source is my jam. I love contributing to open source projects and I'm always looking for new projects to contribute to.</li>
-			<li>
-				I am seeking a full-time position as a front-end developer. I am currently located in the Seattle area, but I am open to remote work.</li>
-			<li>
-				I enjoy hiking, pets, games and spending time with my family.</li>
-
-				
-
-		</ul>
-		<!-- image center -->
-		<p class="flex justify-center">
-			You can Email me here @ <b><a href="mailto:matthieufelker@skiff.com">Matthieufelker@skiff.com</a></b>
+		
+					<b class="font-sans">Seattle Central</b> - Seattle, WA
 			
-		</p>
-		<div class="flex justify-center">
-			<Image
-					src={aboutImg}
-					alt="Matt"
-					class="rounded-full brightness-200"
-				/>
-				</div>
+				<p>
+					<b class="font-sans">Web Development AAS-T</b> - 2023
+				</p>
+			</li>
+		</ul>
 
-	</div>
+
+
+    <!-- image center -->
+    <p class="flex justify-center font-sans">
+      You can Email me here @ <b
+        ><a class="hover:underline" href="mailto:matthieufelker@skiff.com">Matthieufelker@skiff.com</a>
+      </b>
+    </p>
+    <div class="flex justify-center">
+      <Image src={aboutImg} alt="Matt" class="shadow-lg rounded-full brightness-200" />
+    </div>
+  </div>
 </PageLayout>
 
 <style>
-	.mattAvi {
-		width: 350px;
-		border-radius: 100%;
-		filter: brightness(5);
-		
-	}
+  .mattAvi {
+    width: 350px;
+    border-radius: 100%;
+    filter: brightness(5);
+  }
 </style>

@@ -4,26 +4,13 @@ import PostPreview from "@/components/blog/PostPreview";
 import SocialList from "@/components/SocialList";
 import { sortMDByDate } from "@/utils";
 import type { Post } from "@/data/posts";
+import DesignMenu from "@/components/DesignMenu";
+import WebsiteMenu from "@/components/WebsiteMenu";
 
 const MAX_POSTS = 10;
 const allPosts = await Astro.glob<Post>("./posts/*.mdx");
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 
-const url = new URL(Astro.request.url);
-const designLinks = [
-  {
-    title: "Graphic Design",
-    path: "/posts/ad-design",
-  },
-  {
-    title: "Motion Graphics",
-    path: "#",
-  },
-  {
-    title: "Digital Art",
-    path: "#",
-  },
-];
 ---
 
 <PageLayout meta={{ title: "Home" }}>
@@ -52,71 +39,29 @@ const designLinks = [
       </ul>
     </section>
     <section class="pb-4" aria-label="Design post links">
+      <h2 class="pt-4 title mb-4 text-xl">Websites</h2>
+	  <ul class="space-y-4 sm:space-y-2">
+
+<WebsiteMenu />
+	  </ul>
+    </section>
+    <section class="pb-4" aria-label="Design post links">
       <h2 class="pt-4 title mb-4 text-xl">Creative Design</h2>
 	  <ul class="space-y-4 sm:space-y-2">
 
-      {
-        designLinks.map((link) => (
-          <a
-            href={link.path}
-            class="flex flex-wrap items-center gap-x-2 [&_q]:w-full hover:underline"
-            aria-current={url.pathname === link.path ? "page" : false}
-            rel="prefetch"
-          >
-            {link.title}
-          </a>
-        ))
-      }
+<DesignMenu />
 	  </ul>
     </section>
   </div>
   <section class="mt-16">
-    <h2 class="title mb-4 text-xl">Technologies</h2>
-    <ul class="space-y-4 sm:space-y-2">
-      <li>
-        <a
-          href="https://astro.build"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="cactus-link inline-block"
-          >Astro
-        </a>:
-        <p class="inline-block sm:mt-2">Build fast websites, faster.</p>
-      </li>
-      <li>
-        <a
-          href="https://docs.astro.build/en/guides/integrations-guide/image/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="cactus-link inline-block"
-          >@astro/image
-        </a>:
-        <p class="inline-block sm:mt-2">
-          An Astro integration for optimising images in Astro projects.
-        </p>
-      </li>
-      <li>
-        <a
-          href="https://tailwindcss.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="cactus-link inline-block"
-          >Tailwind CSS
-        </a>:
-        <p class="inline-block sm:mt-2">
-          Rapidly build modern websites without ever leaving your HTML.
-        </p>
-      </li>
-      <li>
-        <a
-          href="https://mdxjs.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="cactus-link inline-block"
-          >MDX
-        </a>:
-        <p class="inline-block sm:mt-2">Markdown for the component era.</p>
-      </li>
-    </ul>
+    <h2 class="title mb-4 text-xl">Holopin Board</h2>
+    <p class="pb-4">Verifiable digital badges.</p>
+    <a href="https://holopin.io/@mattman">
+      <img
+        src="https://holopin.me/@mattman"
+        alt="Matthieu's Holopin board"
+        class="rounded-xl cursor-pointer grayscale-50 hover:grayscale-0 transform-gpu duration-200"
+      />
+    </a>
   </section>
 </PageLayout>
