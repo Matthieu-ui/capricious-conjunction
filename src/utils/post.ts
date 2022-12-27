@@ -9,6 +9,20 @@ export function sortMDByDate(posts: MDXInstance<Post>[] = []) {
 	);
 }
 
+// sort by type
+
+export function sortMDByType(posts: MDXInstance<Post>[] = []) {
+	return posts.sort((a, b) => {
+		if (a.frontmatter.type < b.frontmatter.type) {
+			return -1;
+		}
+		if (a.frontmatter.type > b.frontmatter.type) {
+			return 1;
+		}
+		return 0;
+	});
+}
+
 
 export function getUniqueTags(posts: MDXInstance<Post>[] = []) {
 	const uniqueTags = new Set<string>();

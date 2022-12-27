@@ -1,7 +1,7 @@
 ---
 import type { IElement, MDXInstance } from "@/data/shared";
 import type { Post } from "@/data/posts";
-import { getFormattedDate } from "@/utils";
+
 
 interface Props extends IElement {
 	post: MDXInstance<Post>;
@@ -9,13 +9,14 @@ interface Props extends IElement {
 }
 
 const { post, as: Element = "div", withDesc = false } = Astro.props;
-const { publishDate = "" } = post.frontmatter;
-const date = new Date(publishDate);
-const datetime = date.toISOString();
-const postDate = getFormattedDate(date, { month: "short" });
+const postType = post.frontmatter.type;
+const postTypeClass = postType === "post" ? "blog" : postType;
+
 ---
 
-<time datetime={datetime} class="min-w-[120px] text-gray-500">{postDate}</time>
+<post postType={postTypeClass} class="min-w-[120px] text-gray-600">{postTypeClass}</post>
+
+
 <Element>
 	<a href={post.url} class="hover:underline" rel="prefetch">
 		{post.frontmatter.title}
