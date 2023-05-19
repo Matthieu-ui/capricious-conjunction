@@ -6,6 +6,7 @@ import { getUniqueTags, sortMDByDate } from "@/utils";
 import type { Page, MDXInstance, GetStaticPaths } from "@/data/shared";
 import type { Post } from "@/data/posts";
 
+
 export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
 	const allPosts = await Astro.glob<Post>("./*.mdx");
 	const allPostsByDate = sortMDByDate(allPosts);
@@ -21,8 +22,8 @@ interface Props {
 const { page, uniqueTags } = Astro.props;
 
 const meta = {
-	title: "Posts",
-	description: "A collection of posts by me for a starter Astro theme",
+	title: "Projects",
+	description: "A collection of projects I've worked on.",
 };
 
 const paginationProps = {

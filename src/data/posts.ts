@@ -6,6 +6,7 @@ interface Post extends BaseFrontmatter {
 	publishDate: Date;
 	type: string;
 	tags?: string[];
+
 }
 
 export type { Post };

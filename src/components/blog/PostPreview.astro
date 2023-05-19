@@ -1,20 +1,43 @@
 ---
 import type { IElement, MDXInstance } from "@/data/shared";
 import type { Post } from "@/data/posts";
-
+import { Icon } from 'astro-icon'
 
 interface Props extends IElement {
 	post: MDXInstance<Post>;
 	withDesc?: boolean;
+
+	
 }
+
+//icons
+
+
+const icons = {
+  react: "mdi:react",
+  supabase: "simple-icons:supabase",
+  node: "mdi:nodejs",
+  tailwind: "mdi:tailwind",
+  css: "cib:css3-shiled",
+  php: "mdi:language-php",
+  sql: "simple-icons:postgresql",
+  html: "cib:html5-shield",
+};
+
 
 const { post, as: Element = "div", withDesc = false } = Astro.props;
 const postType = post.frontmatter.type;
-const postTypeClass = postType === "post" ? "blog" : postType;
+const postTypes = postType.split(",").map((type) => type.trim());
+
+const postTypeIcons = postTypes.map((type) => icons[type as keyof typeof icons] || null);
 
 ---
 
-<post postType={postTypeClass} class="min-w-[120px] text-gray-600">{postTypeClass}</post>
+<post postType={postTypeIcons} class="flex min-w-[120px] text-gray-600">
+	{postTypeIcons.map((icon, index) => (
+	  <Icon key={index} name={icon} class="w-8 h-8 dark:text-yellow-600" />
+	))}
+  </post>
 
 
 <Element>

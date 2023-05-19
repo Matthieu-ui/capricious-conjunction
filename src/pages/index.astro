@@ -4,36 +4,55 @@ import PostPreview from "@/components/blog/PostPreview";
 import SocialList from "@/components/SocialList";
 import { sortMDByDate } from "@/utils";
 import type { Post } from "@/data/posts";
-import DesignMenu from "@/components/DesignMenu";
-import WebsiteMenu from "@/components/WebsiteMenu";
+
+import { Icon } from 'astro-icon'
 
 const MAX_POSTS = 10;
 const allPosts = await Astro.glob<Post>("./posts/*.mdx");
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 
+
+
 ---
 
 <PageLayout meta={{ title: "Home" }}>
   <section>
-    <h1 class="title mb-6">Hello World!</h1>
+    <h1 class="title mb-6">Hello World 
+    
+      <!-- animation doesnt work properley unless svg is inline -->
+      <svg class="inline translate-y-[-4px]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path fill="currentColor" fill-opacity="0" stroke-dasharray="48" stroke-dashoffset="48" d="M17 9v9a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3V9z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.6s" values="48;0"/><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.15s" values="0;0.3"/></path><path stroke-dasharray="14" stroke-dashoffset="14" d="M17 14H20C20.55 14 21 13.55 21 13V10C21 9.45 20.55 9 20 9H17"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="14;28"/></path></g><mask id="lineMdCoffeeTwotoneLoop0"><path fill="none" stroke="#fff" stroke-width="2" d="M8 0c0 2-2 2-2 4s2 2 2 4-2 2-2 4 2 2 2 4M12 0c0 2-2 2-2 4s2 2 2 4-2 2-2 4 2 2 2 4M16 0c0 2-2 2-2 4s2 2 2 4-2 2-2 4 2 2 2 4"><animateMotion calcMode="linear" dur="3s" path="M0 0v-8" repeatCount="indefinite"/></path></mask><rect width="24" height="0" y="7" fill="currentColor" mask="url(#lineMdCoffeeTwotoneLoop0)"><animate fill="freeze" attributeName="y" begin="0.8s" dur="0.6s" values="7;2"/><animate fill="freeze" attributeName="height" begin="0.8s" dur="0.6s" values="0;5"/></rect></svg>
+
+
+   </h1>
     <p class="mb-4">
-      Hi, My name is <strong>Matthieu Felker</strong>, I am a developer based
-      out of <strong>Seattle, WA</strong>.</p>
+      My name is <strong>Matthieu Felker</strong>, I am a developer based
+      out of <strong>Seattle, WA</strong>. I specialize in <strong>front-end</strong> and <strong>full-stack</strong> development with a focus on <strong>React</strong> and <strong>Node.js</strong>.
+    </p>
       
-      <p><strong>I am passionate about building accessible, performant and appealing websites & applications.</strong></p> 
+      <p><strong>I am all about building accessible, performant and appealing websites & applications.</strong></p> 
 <br />
 
-
-
+    
     <SocialList />
-    <p class="border p-1 shadow-sm"><small>Currently available for contract work and seeking
-      a full time employment opportunity as a front-end or full-stack developer &#8212;locally
-      or remote!</small>
-      </p>
+
+
+    <p class="border p-3 shadow-sm nm-concave-white-sm dark:nm-inset-stone-900 text-center rounded-sm">
+      <span class="dark:text-yellow-500 font-bold">
+        <svg xmlns="http://www.w3.org/2000/svg" class="animate-pulse dark:text-yellow-500 text-red-900 mr-2" width="2em" height="2em" viewBox="0 0 24 24" style="display: inline-block;">
+          <path fill="currentColor" d="M13 1h-2v2H9v2H7v2H5v2H3v2H1v2h2v2h2v2h2v2h2v2h2v2h2v-2h2v-2h2v-2h2v-2h2v-2h2v-2h-2V9h-2V7h-2V5h-2V3h-2V1zm0 2v2h2v2h2v2h2v2h2v2h-2v2h-2v2h-2v2h-2v2h-2v-2H9v-2H7v-2H5v-2H3v-2h2V9h2V7h2V5h2V3h2zm0 4h-2v6h2V7zm0 8h-2v2h2v-2z">
+            <small>Available for contract work and seeking a full time employment opportunity as a front-end or full-stack developer &#8212;locally or remote!</small>
+          </path>
+        </svg>
+      </span>
+    </p>   
+      
   </section>
-  <div class="section-grid">
-    <section aria-label="Blog post list" class="mt-16">
-      <h2 class="title mb-4 text-xl">Projects</h2>
+  <h2 class="title mb-4 text-xl mt-10">Projects</h2>
+  <div class="nm-concave-white-sm dark:nm-inset-stone-900-lg rounded-sm">
+  <div class="section-grid border rounded-sm">
+    
+    <section aria-label="Blog post list" class="p-5">
+   
       <ul class="space-y-4 sm:space-y-2">
         {
           allPostsByDate.map((p) => (
@@ -43,17 +62,23 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
           ))
         }
       </ul>
+     
     </section>
+ 
     </div>
+
+    
+    </div>
+
     
   <section class="mt-16">
     
-    <p class="pb-4">Verified digital badges <small>via </small><a href="https://holopin.me">[Holopin]</a></p>
+    <p class="pb-4">Verified digital badges <small>via </small><a class="dark:text-yellow-600 hover:underline p-1" href="https://holopin.me">[Holopin]</a></p>
     <a href="https://holopin.io/@mattman">
       <img
         src="https://holopin.me/@mattman"
         alt="Matthieu's Holopin board"
-        class="rounded-xl cursor-pointer grayscale-50 hover:grayscale-0 transform-gpu duration-200"
+        class="rounded-sm cursor-pointer grayscale-50 hover:grayscale-0 transform-gpu duration-200 nm-inset-white-xs dark:nm-inset-stone-900 p-3"
       />
     </a>
   </section>
