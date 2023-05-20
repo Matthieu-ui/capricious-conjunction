@@ -3,7 +3,7 @@
 	.section-grid {
 	
 		background-image: linear-gradient(var(--theme-grid-bg), transparent .1em), linear-gradient(90deg, var(--theme-grid-bg), transparent .1em);
-	padding-left: 1rem;
+		padding-left: 1rem;
 		background-size: 3em 3em;
 		background-position: 0 5rem, 5rem 0;
 	}
