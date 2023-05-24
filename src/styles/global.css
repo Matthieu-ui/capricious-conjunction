@@ -1,7 +1,6 @@
 @tailwind base;
 @layer base {
 	.section-grid {
-	
 		background-image: linear-gradient(var(--theme-grid-bg), transparent .1em), linear-gradient(90deg, var(--theme-grid-bg), transparent .1em);
 		padding-left: 1rem;
 		background-size: 3em 3em;
