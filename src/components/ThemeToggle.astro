@@ -46,11 +46,13 @@
 		osColorScheme.addEventListener("change", (evnt) => {
 			isDarkState = evnt.matches;
 			toggleDarkMode();
+			console.log("OS theme changed to", evnt.matches ? "dark" : "light");
 		});
 		// Theme Btn click
 		toggleThemeButton.addEventListener("click", () => {
 			isDarkState = !isDarkState;
 			toggleDarkMode();
+			console.log("Theme changed to", isDarkState ? "dark" : "light");
 		});
 	});
 </script>
