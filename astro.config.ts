@@ -5,14 +5,13 @@ import image from "@astrojs/image";
 import sitemap from "@astrojs/sitemap";
 import prefetch from "@astrojs/prefetch";
 import react from "@astrojs/react";
-import netlify from '@astrojs/netlify/functions';
+
+import netlify from '@astrojs/netlify/edge-functions';
 
 // https://astro.build/config
 export default defineConfig({
   output: 'server',
-  adapter: netlify({
-    dist: new URL('./dist/', import.meta.url)
-  }),
+  adapter: netlify(),
   site: "https://matthieufelker.com/",
   markdown: {
     shikiConfig: {
