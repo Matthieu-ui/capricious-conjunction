@@ -21,7 +21,6 @@ module.exports = {
 		extend: {
 			colors: {
 				bgColor: "var(--theme-bg)",
-				bgDark: "#1d1f21",
 				textColor: "var(--theme-text)",
 				link: "var(--theme-link)",
 				accent: "var(--theme-accent)",
