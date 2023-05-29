@@ -9,6 +9,10 @@ import netlify from '@astrojs/netlify/functions';
 
 // https://astro.build/config
 export default defineConfig({
+  output: 'server',
+  adapter: netlify({
+    dist: new URL('./dist/', import.meta.url)
+  }),
   site: "https://matthieufelker.com/",
   markdown: {
     shikiConfig: {
@@ -23,8 +27,7 @@ export default defineConfig({
   }), image({
     serviceEntryPoint: "@astrojs/image/sharp"
   }), sitemap(), prefetch(), react()],
-  output: 'server',
-  adapter: netlify(),
+
 
 
 });
