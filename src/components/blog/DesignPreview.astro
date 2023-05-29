@@ -1,0 +1,31 @@
+---
+import type { IElement, MDXInstance } from "@/data/shared";
+import type { Post } from "@/data/posts";
+import { Icon } from 'astro-icon'
+
+interface Props extends IElement {
+	post: MDXInstance<Post>;
+	withDesc?: boolean;
+
+	
+}
+
+
+
+const { post, as: Element = "div", withDesc = false } = Astro.props;
+
+
+
+
+
+---
+
+
+
+
+<Element>
+	<a href={post.url} class="hover:underline" rel="prefetch">
+		{post.frontmatter.title}
+	</a>
+</Element>
+{withDesc && <q class="block italic line-clamp-3">{post.frontmatter.description}</q>}

@@ -11,9 +11,15 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/netlify": "^2.2.3",
     "@astrojs/prefetch": "^0.1.1",
+    "@astrojs/react": "^2.2.0",
+    "@types/react": "^18.2.7",
+    "@types/react-dom": "^18.2.4",
     "astro": "^2.5.5",
     "iconify-icon": "^1.0.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "save-dev": "^0.0.1-security",
     "sharp": "^0.31.2",
     "tailwindcss-neumorphism": "^0.1.0"
