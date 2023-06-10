@@ -9,8 +9,6 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-
-
   site: "https://matthieufelker.com/",
   markdown: {
     shikiConfig: {
@@ -18,6 +16,7 @@ export default defineConfig({
       wrap: true
     }
   },
+
   integrations: [mdx({}), tailwind({
     config: {
       applyBaseStyles: false
@@ -25,6 +24,12 @@ export default defineConfig({
   }), image({
     serviceEntryPoint: "@astrojs/image/sharp"
   }), sitemap(), prefetch(), react()],
+  compressHTML: true,
+	vite: {
+		optimizeDeps: {
+			exclude: ["@resvg/resvg-js"],
+		},
+	},
 
 
 

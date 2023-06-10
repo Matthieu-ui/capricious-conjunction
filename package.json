@@ -16,7 +16,7 @@
     "@astrojs/react": "^2.2.0",
     "@types/react": "^18.2.7",
     "@types/react-dom": "^18.2.4",
-    "astro": "^2.5.5",
+    "astro": "2.5.7",
     "iconify-icon": "^1.0.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -25,7 +25,7 @@
     "tailwindcss-neumorphism": "^0.1.0"
   },
   "devDependencies": {
-    "@astrojs/image": "^0.12.1",
+    "@astrojs/image": "0.16.9",
     "@astrojs/mdx": "^0.13.0",
     "@astrojs/sitemap": "^1.0.0",
     "@astrojs/tailwind": "^3.1.3",

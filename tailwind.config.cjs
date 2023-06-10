@@ -20,6 +20,8 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
+				
+				bgDark: "#1d1f21",
 				bgColor: "var(--theme-bg)",
 				textColor: "var(--theme-text)",
 				link: "var(--theme-link)",
@@ -93,7 +95,7 @@ module.exports = {
 		},
 	},
 	plugins: [
-		require('tailwindcss-neumorphism'),
+		
 		require("@tailwindcss/typography"),
 		require("@tailwindcss/line-clamp"),
 		require("@tailwindcss/aspect-ratio"),
