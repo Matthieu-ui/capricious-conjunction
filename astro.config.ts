@@ -16,7 +16,6 @@ export default defineConfig({
       wrap: true
     }
   },
-
   integrations: [mdx({}), tailwind({
     config: {
       applyBaseStyles: false
@@ -24,7 +23,5 @@ export default defineConfig({
   }), image({
     serviceEntryPoint: "@astrojs/image/sharp"
   }), sitemap(), prefetch(), react()],
-  compressHTML: true,
-
-
+  compressHTML: true
 });
