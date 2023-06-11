@@ -25,12 +25,6 @@ export default defineConfig({
     serviceEntryPoint: "@astrojs/image/sharp"
   }), sitemap(), prefetch(), react()],
   compressHTML: true,
-	vite: {
-		optimizeDeps: {
-			exclude: ["@resvg/resvg-js"],
-		},
-	},
-
 
 
 });
