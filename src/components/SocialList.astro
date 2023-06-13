@@ -3,40 +3,41 @@ import { Icon } from 'astro-icon'
 ---
 <div class="flex flex-wrap items-center gap-x-4 sm:items-center">
 	<p>Find me on</p>
-	<ul class="flex flex-1 items-center gap-x-4 sm:flex-initial">
+	<ul class="flex flex-1 items-center gap-x-4 sm:flex-initial ">
 		<li>
 			<a
-				class="inline-block p-2 sm:hover:text-link"
+				class="inline-block p-2 hover:drop-shadow-md "
 				href="https://github.com/matthieu-ui"
 				target="_blank"
 				rel="noopener noreferrer"
 			>
-			<Icon name="uim:github" class="h-6 w-6 mx-auto hover:scale-110 transition duration-175 ease-in-out hover:drop-shadow-md" />
-				<span class="">Github</span>
+			<Icon name="octicon:octoface-24" class="contrast-200  text-accent hover:inset-100 h-6 w-6 mx-auto antialiased " />
+				<span class="font-mono font-bold ">Github</span>
 			</a>
 		</li>
 		<li>
 			<a
-				class="inline-block p-2 sm:hover:text-link"
+				class="inline-block p-2 hover:drop-shadow-md "
 				href="https://twitter.com/fattmelker"
 				target="_blank"
 				rel="noopener noreferrer"
 			>
-				<Icon name="ph:twitter-logo-duotone" class="h-6 w-6 mx-auto hover:scale-110 transition duration-175 ease-in-out hover:drop-shadow-md" />
+				<Icon name="teenyicons:twitter-solid" class="contrast-200 hover:inset-100 h-6 w-6 mx-auto antialiased text-accent " 
+				/>
 				</svg>
-				<span class="">Twitter</span>
+				<span class="font-mono font-bold ">Twitter</span>
 			</a>
 		</li>
 		<li>
 			<a
-				class="inline-block p-2 sm:hover:text-link"
+				class="inline-block p-2  hover:drop-shadow-md"
 				href="https://www.linkedin.com/in/matthieufelker/"
 				target="_blank"
 				rel="noopener noreferrer"
 			>
-				<Icon name="ph:linkedin-logo-duotone" class="h-6 w-6 mx-auto hover:scale-110 transition duration-175 ease-in-out hover:drop-shadow-md" />
+				<Icon name="ph:linkedin-logo-bold" class="contrast-200  hover:inset-100 h-6 w-6 mx-auto antialiased text-accent" />
 				</svg>
-				<span class="">LinkedIn</span>
+				<span class="font-mono font-bold">LinkedIn</span>
 			</a>
 		</li>
 		

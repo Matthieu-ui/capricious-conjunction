@@ -18,18 +18,18 @@
 .line-svg path {
 	fill: none;
 	stroke: var(--theme-text);
-	stroke-width: 6;
-
+	stroke-width: 5 ;
 
 
 	stroke-linecap: round;
 	stroke-linejoin: round;
-	stroke-dasharray:10;
+	stroke-dasharray:5;
 	stroke-dashoffset: 10;
 	animation: dash 10s forwards infinite linear;
 	/* shadow */
-	filter: drop-shadow(0 2px 2px var(--theme-link));
+	filter: drop-shadow(0 20px 2px  var(--theme-accent)) 
 	
+
 
 
 }
@@ -62,7 +62,7 @@ to {
 		--theme-bg: #fafafa;
 		--theme-link: #8f52f8;
 		--theme-text: #22272a;
-		--theme-accent: #7515d6;
+		--theme-accent: #cc2a42;
 		--theme-accent-2: #111;
 		--theme-quote: #cc2a42;
 		--theme-menu-bg: rgb(250 250 250 / 0.85);
