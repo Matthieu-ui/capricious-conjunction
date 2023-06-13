@@ -18,7 +18,7 @@
 .line-svg path {
 	fill: none;
 	stroke: var(--theme-text);
-	stroke-width: 10;
+	stroke-width: 6;
 
 
 
@@ -29,9 +29,7 @@
 	animation: dash 10s forwards infinite linear;
 	/* shadow */
 	filter: drop-shadow(0 2px 2px var(--theme-link));
-	/* for mac */
 	
-	-webkit-filter: drop-shadow(0 2px 2px var(--theme-link));
 
 
 }
