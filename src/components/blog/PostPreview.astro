@@ -33,7 +33,7 @@ const postTypeIcons = postTypes.map((type) => icons[type as keyof typeof icons] 
 
 ---
 
-<post postType={postTypeIcons} class="flex min-w-[120px] text-gray-600">
+<post postType={postTypeIcons} class="flex min-w-[120px] ">
 	{postTypeIcons.map((icon, index) => (
 	  <Icon key={index} name={icon} class="w-8 h-8 text-accent hover:drop-shadow-md hover:scale-105 transistion duration-200 " />
 	))}

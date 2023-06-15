@@ -7,7 +7,7 @@ import type { Post } from "@/data/posts";
 const MAX_POSTS = 10;
 const allPosts = await Astro.glob<Post>("./posts/*.mdx");
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
-
+import Gallery from "../components/react/Gallery.jsx";
 
 
 ---
@@ -62,7 +62,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
      
     </section>
  
-    </div>
+
 
     
     </div>
@@ -70,6 +70,6 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
     
   <section class="mt-16">
     
-
+    <Gallery />
   </section>
 </PageLayout>
