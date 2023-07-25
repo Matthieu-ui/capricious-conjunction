@@ -106,7 +106,7 @@ import Gallery from "../components/react/Gallery.jsx";
 
     <SocialList />
 
-    <p class="border p-3 shadow-sm text-center rounded-sm">
+    <p class="border border-accent p-3 shadow-sm text-center rounded-sm">
       <span class="dark:text-yellow-500 font-bold">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -131,8 +131,8 @@ import Gallery from "../components/react/Gallery.jsx";
     </p>
   </section>
   <h2 class="title mb-4 text-xl mt-10">Projects</h2>
-  <div class="rounded-sm">
-    <div class="section-grid border rounded-sm">
+
+    <div class="section-grid border border-accent rounded-sm">
       <section aria-label="Blog post list" class="p-5">
         <ul class="space-y-4 sm:space-y-2">
           {
@@ -142,12 +142,26 @@ import Gallery from "../components/react/Gallery.jsx";
               </li>
             ))
           }
+   
+            <a
+              class="inline-block p-2 hover:underline"
+              href="https://github.com/matthieu-ui"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+            Visit GitHub &rarr;</a>
+
+ 
+
+
         </ul>
+
+
       </section>
     </div>
 
     <section class="mt-16">
       <Gallery />
     </section>
-  </div>
+
 </PageLayout>
