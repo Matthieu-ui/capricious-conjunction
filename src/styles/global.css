@@ -112,7 +112,6 @@ to {
 
 
 
-
 	.section-grid {
 		background-image: linear-gradient(var(--theme-grid-bg), transparent .1em), linear-gradient(90deg, var(--theme-grid-bg), transparent .1em);
 		padding-left: 1rem;
@@ -125,7 +124,7 @@ to {
 		--theme-bg2:#efefef;
 		--theme-link: #8f52f8;
 		--theme-text: #22272a;
-		--theme-accent: #38192a;
+		--theme-accent: #000000;
 		--theme-accent-2: rgb(30, 30, 30);
 		--theme-quote: #645c61;
 		--theme-menu-bg: rgb(250 250 250 / 0.85);
