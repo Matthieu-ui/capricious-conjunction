@@ -7,7 +7,9 @@
 │   └── favicon.svg
 ├── src/
 │   ├── components/
-│   │   └── Card.astro
+│   │   └── react
+│   │   │     └── react.jsx
+│   │   └── components.astro
 │   ├── layouts/
 │   │   └── Layout.astro
 │   └── pages/
