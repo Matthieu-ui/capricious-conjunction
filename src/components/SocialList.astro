@@ -1,43 +1,44 @@
 ---
 import { Icon } from 'astro-icon'
 ---
-<div class="flex flex-wrap items-center gap-x-4 sm:items-center">
-	<p>Find me on</p>
+
+<div class="flex flex-wrap items-center gap-x-4 sm:items-center text-accent">
+	<b class="">Find me on</b>
 	<ul class="flex flex-1 items-center gap-x-4 sm:flex-initial ">
-		<li>
+		<li class="drop-shadow-lg hover:underline ">
 			<a
 				class="inline-block p-2 hover:drop-shadow-md "
 				href="https://github.com/matthieu-ui"
 				target="_blank"
 				rel="noopener noreferrer"
 			>
-			<Icon name="octicon:octoface-24" class="contrast-200  text-accent hover:inset-100 h-6 w-6 mx-auto antialiased " />
-				<span class="font-mono font-bold ">Github</span>
+			<Icon name="octicon:octoface-24" class=" contrast-200 h-6 w-6 mx-auto antialiased rounded-full " />
+				<span class=" font-bold ">Github</span>
 			</a>
 		</li>
-		<li>
+		<li class="drop-shadow-lg hover:underline">
 			<a
 				class="inline-block p-2 hover:drop-shadow-md "
 				href="https://twitter.com/fattmelker"
 				target="_blank"
 				rel="noopener noreferrer"
 			>
-				<Icon name="teenyicons:twitter-solid" class="contrast-200 hover:inset-100 h-6 w-6 mx-auto antialiased text-accent " 
+				<Icon name="teenyicons:twitter-solid" class="contrast-200 h-6 w-6 mx-auto antialiased " 
 				/>
 				</svg>
-				<span class="font-mono font-bold ">Twitter</span>
+				<span class=" font-bold ">Twitter</span>
 			</a>
 		</li>
-		<li>
+		<li class="drop-shadow-lg hover:underline">
 			<a
 				class="inline-block p-2  hover:drop-shadow-md"
 				href="https://www.linkedin.com/in/matthieufelker/"
 				target="_blank"
 				rel="noopener noreferrer"
 			>
-				<Icon name="ph:linkedin-logo-bold" class="contrast-200  hover:inset-100 h-6 w-6 mx-auto antialiased text-accent" />
+				<Icon name="ph:linkedin-logo-bold" class=" contrast-200 h-6 w-6 mx-auto antialiased" />
 				</svg>
-				<span class="font-mono font-bold">LinkedIn</span>
+				<span class=" font-bold">LinkedIn</span>
 			</a>
 		</li>
 		

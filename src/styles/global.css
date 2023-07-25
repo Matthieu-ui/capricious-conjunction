@@ -1,5 +1,66 @@
 @tailwind base;
 @layer base {
+
+	.container {
+border: var(--theme-text) 1px solid;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	  }
+	  
+	  .cube {
+		transform-origin: 100px 100px;
+		transform-style: preserve-3d;
+		animation: rotateAnimation 5s infinite linear;
+	  }
+	  
+	  .face {
+		fill-opacity: 0.6;
+		stroke-width: 2;
+		color: #fff;
+		text-anchor: middle;
+		dominant-baseline: middle;
+		font-size: 2px;
+	  }
+	  
+	  .front {
+		fill: rgba(0, 0, 0, 0.6);
+	  }
+	  
+	  .back {
+		fill: rgba(0, 0, 0, 0.6);
+		transform: translateZ(-100px) rotateY(180deg);
+	  }
+	  
+	  .top {
+		fill: rgba(0, 0, 0, 0.4);
+		transform: rotateX(90deg) translateZ(-100px);
+	  }
+	  
+	  .bottom {
+		fill: rgba(0, 0, 0, 0.8);
+		transform: rotateX(-90deg) translateZ(-100px);
+	  }
+	  
+	  .left {
+		fill: rgba(0, 0, 0, 0.8);
+		transform: rotateY(-90deg) translateZ(-100px);
+	  }
+	  
+	  .right {
+		fill: rgba(0, 0, 0, 0.4);
+		transform: rotateY(90deg) translateZ(-100px);
+	  }
+	  
+	  @keyframes rotateAnimation {
+		0% {
+		  transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		  transform: rotateX(360deg) rotateY(360deg);
+		}
+	  }
+	  
 	
 /* infinite morph header */
 .line-svg {
@@ -11,32 +72,29 @@
 	width: 100%;
 	height: 100%;
 	border-radius: 4px 4px 4px 4px;
-
+	box-shadow: #030303 0 0 1px 2px inset;
 
 }
 
 .line-svg path {
 	fill: none;
 	stroke: var(--theme-text);
-	stroke-width: 5 ;
-
-
+	stroke-width: 4 ;
 	stroke-linecap: round;
 	stroke-linejoin: round;
 	stroke-dasharray:5;
 	stroke-dashoffset: 10;
 	animation: dash 10s forwards infinite linear;
 	/* shadow */
-	filter: drop-shadow(0 20px 2px  var(--theme-accent)) 
-	
-
-
-
 }
+
+
 
 @keyframes dash {
 from {
 	stroke-dashoffset: 100;		
+
+
 }
 to {
 	stroke-dashoffset: 0;
@@ -45,8 +103,11 @@ to {
 
 
 
-	
 
+.soc-icon path {
+
+	filter: drop-shadow(0 .5px .5px  var(--theme-quote)) 
+}
 
 
 
@@ -60,23 +121,26 @@ to {
 	:root {
 		color-scheme: light;
 		--theme-bg: #fafafa;
+		--theme-bg2:#efefef;
 		--theme-link: #8f52f8;
 		--theme-text: #22272a;
-		--theme-accent: #cc2a42;
-		--theme-accent-2: #111;
-		--theme-quote: #cc2a42;
+		--theme-accent: #000000;
+		--theme-accent-2: rgb(30, 30, 30);
+		--theme-quote: #645c61;
 		--theme-menu-bg: rgb(250 250 250 / 0.85);
 		--theme-grid-bg: rgba(158, 158, 158, 0.295);
+		--theme-card: linear gradient(90deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8));
 	}
 
 	:root.dark {
 		color-scheme: dark;
 		--theme-bg: #1d1f21;
-		--theme-link: #7f38d1;
-		--theme-text: #c9cacc;
-		--theme-accent: #d8f3fd;
-		--theme-accent-2: #eeeeee;
-		--theme-quote: #ccffb6;
+		--theme-bg2:rgb(25, 27, 28)1;
+		--theme-link: #fafafa;
+		--theme-text: #fafafa;
+		--theme-accent: #b79113;
+		--theme-accent-2: #fafafa;
+		--theme-quote: #535452;
 		--theme-menu-bg: rgba(29, 31, 33, 0.85);
 		--theme-grid-bg: rgba(63, 63, 63, 0.295);
 	}
