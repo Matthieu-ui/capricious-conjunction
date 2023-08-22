@@ -142,7 +142,8 @@ to {
 		--theme-accent-2: #fafafa;
 		--theme-quote: #535452;
 		--theme-menu-bg: rgba(29, 31, 33, 0.85);
-		--theme-grid-bg: rgba(63, 63, 63, 0.295);
+		--theme-grid-bg: rgba(63, 63, 63, 0.295); 
+
 	}
 
 	html {

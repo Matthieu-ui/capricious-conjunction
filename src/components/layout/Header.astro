@@ -55,13 +55,32 @@ const menuLinks = [
       aria-current={url.pathname === "/" ? "page" : false}
     >
       <div
-        class="group relative mt-5 w-16 rounded-md bg-zinc-200 p-2 ring-zinc-400 transition-all hover:ring-2 dark:bg-zinc-900"
+      class=" 
+      relative
+      flex
+      items-center
+      justify-center
+      w-12
+      h-12
+bg-[color:var(--theme-menu-bg)]
+rounded-full
+
+      sm:w-16
+      sm:h-16
+      
+
+      "
       >
-        <img
-          class="dark:-hue-rotate-[180deg] brightness-150"
-          src="/isoblok64.png"
-          alt="matts logo"
-        />
+<Icon name="simple-icons:metafilter" 
+focusable="true"
+stroke-width="0"
+stroke="currentColor"
+fill="currentColor"
+
+class="p-1 w-10 h-10 sm:w-14 sm:h-14 text-accent"
+/>
+
+
       </div>
     </a>
     <nav
