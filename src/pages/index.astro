@@ -101,8 +101,8 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 
     <SocialList />
 
-    <div class="border border-[var(--theme-text)] bg-[var(--color-accent)] p-3 shadow-sm text-center rounded-sm ">
-      <span class="dark:text-yellow-500 font-bold">
+    <div class="section-grid border border-[var(--theme-text)] shadow-sm text-center rounded-md">
+      <span class="font-bold">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="animate-pulse dark:text-yellow-500 text-red-900 mr-2"
@@ -130,7 +130,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
   </section>
   <h2 class="title mb-4 text-xl mt-10">Projects</h2>
 
-    <div class="section-grid border border-text rounded-sm">
+    <div class="section-grid border border-text rounded-md">
       <section aria-label="Blog post list" class="p-5">
         <ul class="space-y-4 sm:space-y-2">
           {
