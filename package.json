@@ -53,6 +53,6 @@
     "astro-icon": "^0.8.1",
     "satori": "0.10.1",
     "satori-html": "^0.3.2",
-    "sharp": "^0.32.0"
+    "sharp": "^0.32.6"
   }
 }
