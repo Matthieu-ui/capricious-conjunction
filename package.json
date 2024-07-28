@@ -48,6 +48,7 @@
   "devDependencies": {
     "@astrojs/prefetch": "^0.2.3",
     "@astrojs/rss": "^2.4.3",
+    "@iconify/icons-arcticons": "^1.2.77",
     "@tailwindcss/line-clamp": "^0.4.4",
     "astro": "2.5.7",
     "astro-icon": "^0.8.1",
