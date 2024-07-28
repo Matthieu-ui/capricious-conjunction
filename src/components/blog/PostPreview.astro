@@ -3,6 +3,7 @@ import type { IElement, MDXInstance } from "@/data/shared";
 import type { Post } from "@/data/posts";
 import { Icon } from 'astro-icon'
 
+
 interface Props extends IElement {
 	post: MDXInstance<Post>;
 	withDesc?: boolean;
@@ -24,8 +25,8 @@ const icons = {
   html: "cib:html5-shield",
   astro: "simple-icons:astro",
   rss: "mdi:rss",
-  glitch: 'simple-icons:glitch',
-  uptimerobot: 'arcticons:uptimerobot',
+  glitch: 'simple-icons:glitch'
+  // uptimerobot: 'arcticons:uptimerobot',
 
 
 
