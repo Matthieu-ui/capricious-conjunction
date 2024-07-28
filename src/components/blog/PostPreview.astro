@@ -22,7 +22,13 @@ const icons = {
   php: "mdi:language-php",
   sql: "simple-icons:postgresql",
   html: "cib:html5-shield",
+  astro: "simple-icons:astro",
+  rss: "mdi:rss",
+
+
 };
+
+
 
 
 const { post, as: Element = "div", withDesc = false } = Astro.props;
@@ -35,7 +41,7 @@ const postTypeIcons = postTypes.map((type) => icons[type as keyof typeof icons] 
 
 <post postType={postTypeIcons} class="flex min-w-[120px] ">
 	{postTypeIcons.map((icon, index) => (
-	  <Icon key={index} name={icon} class="w-6 h-6 text-[var(--theme-text)]" />
+	  <Icon key={index} name={icon} title ={icon?.split(":")[1]} class="w-6 h-6 text-[var(--theme-text)]" />
 	))}
   </post>
 
