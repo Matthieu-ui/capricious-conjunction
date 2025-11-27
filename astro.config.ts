@@ -10,6 +10,10 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
   site: "https://matthieufelker.com/",
+  server: {
+    host: "0.0.0.0",
+    port: 5000
+  },
   markdown: {
     shikiConfig: {
       theme: "dracula",
