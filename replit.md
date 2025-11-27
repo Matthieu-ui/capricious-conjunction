@@ -11,13 +11,13 @@ This is a professional portfolio website built with Astro 2.5.7, showcasing work
 
 ## Recent Changes (November 27, 2025)
 - Configured Astro dev server to run on `0.0.0.0:5000` for Replit environment
-- Updated site tagline to "Web & Software Developer | System Ops | Builder"
-- Added "System Operations" expertise to all pages
-- Updated intro to emphasize bridging software and construction
-- Focused content on warehouse, inventory, and logistics tools at Uresco
-- Mentioned Web3/Hedera projects as outside-of-work focus
-- Completely rewrote About page with skills in web development, system ops, warehouse/inventory management, Web3, 3D visualization, and building expertise
-- Updated portfolio page with System Ops as primary secondary expertise
+- Updated site tagline to "Web & Software Developer | System Ops | Builder | Business-Minded"
+- Added business-focused angle: bridging software, construction, AND business
+- Emphasized daily operations work improving warehouse, inventory, logistics, and sales workflows
+- Detailed Web3 expertise: dynamic NFTs, micro-payment systems, on-chain data tools
+- Completely rewrote About page with focus on business process optimization
+- Updated portfolio page with Business Process Optimization as dedicated expertise area
+- All pages now emphasize business value, efficiency, and growth
 - Set up workflow "Astro Dev Server" to run `npm run dev`
 - Configured deployment as static site with build command
 
