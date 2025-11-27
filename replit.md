@@ -1,7 +1,7 @@
 # Matthieu Felker Portfolio - Replit Setup
 
 ## Overview
-This is a portfolio website built with Astro 2.5.7, showcasing projects and blog posts. The site was successfully imported from GitHub and configured to run in the Replit environment.
+This is a professional portfolio website built with Astro 2.5.7, showcasing work at Uresco Construction Materials. The portfolio highlights expertise in web/software development, carpentry, warehouse management, 3D visualization, and geolocation applications.
 
 ## Project Architecture
 - **Framework**: Astro 2.5.7 (static site generator with React components)
@@ -11,9 +11,12 @@ This is a portfolio website built with Astro 2.5.7, showcasing projects and blog
 
 ## Recent Changes (November 27, 2025)
 - Configured Astro dev server to run on `0.0.0.0:5000` for Replit environment
+- Updated site description and meta information
+- Redesigned home page with professional introduction highlighting Uresco Construction Materials
+- Completely rewrote About page with skills/experience in web development, 3D visualization, warehouse management, geolocation, and carpentry
+- Updated portfolio to showcase expertise in lumber industry, construction, and materials management
 - Set up workflow "Astro Dev Server" to run `npm run dev`
 - Configured deployment as static site with build command
-- Verified website is working correctly with all pages loading
 
 ## Development Setup
 ### Server Configuration
