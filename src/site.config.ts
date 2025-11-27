@@ -1,6 +1,6 @@
 const siteMeta = {
         title: "Matthieu Felker",
-        description: "Web & Software Developer | Carpenter | Warehouse Management & Geolocation Specialist",
+        description: "Web & Software Developer | Custom Home Builder | Web3 Developer | Warehouse Management & Geolocation Specialist",
         lang: "en_US",
         ogLocale: "en_US",
         githubUrl: "https://github.com/matthieu-ui",
