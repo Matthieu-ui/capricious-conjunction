@@ -19,38 +19,15 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
     </p>
     <SocialList />
   </section>
-  <h2 class="title mb-4 text-xl mt-10">Featured Projects</h2>
 
-    <div class="section-grid border border-text rounded-md">
-      <section aria-label="Blog post list" class="p-5">
-        <ul class="space-y-4 sm:space-y-2">
-          {
-            allPostsByDate.map((p) => (
-              <li class="flex flex-wrap items-center gap-x-2 [&_q]:w-full">
-                <PostPreview post={p} as="h2" />
-              </li>
-            ))
-          }
-   
-            <a
-              class="inline-block p-2 hover:underline"
-              href="https://github.com/matthieu-ui"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-            Visit GitHub &rarr;</a>
-
- 
-
-
-        </ul>
-
-
-      </section>
-    </div>
-<!-- 
-    <section class="mt-16">
-      <Gallery />
-    </section> -->
+  <section class="mt-12">
+    <h2 class="title mb-4 text-xl">Current Focus</h2>
+    <p class="mb-4">
+      Currently focused on building solutions for Uresco Construction Materials. I'm developing warehouse management systems, 3D visualization tools, and geolocation-based logistics applications to optimize lumber and materials operations.
+    </p>
+    <p class="mb-4">
+      Check out my <a class="hover:underline" href="https://github.com/matthieu-ui" target="_blank" rel="noopener noreferrer">GitHub</a> for my open source work and previous projects.
+    </p>
+  </section>
 
 </PageLayout>
