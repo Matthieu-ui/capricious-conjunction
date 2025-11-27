@@ -1,6 +1,6 @@
 const siteMeta = {
         title: "Matthieu Felker",
-        description: "Web & Software Developer | Custom Home Builder | Web3 Developer | Warehouse Management & Geolocation Specialist",
+        description: "Web & Software Developer | System Ops | Builder - Bridging software and construction at Uresco Construction Materials",
         lang: "en_US",
         ogLocale: "en_US",
         githubUrl: "https://github.com/matthieu-ui",
