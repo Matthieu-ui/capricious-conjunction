@@ -20,6 +20,7 @@ This is a professional portfolio website built with Astro 2.5.7, showcasing work
 - All pages now emphasize business value, efficiency, and growth
 - Set up workflow "Astro Dev Server" to run `npm run dev`
 - Configured deployment as static site with build command
+- Created `netlify.toml` with Node 18.12.0 runtime for Netlify builds
 
 ## Development Setup
 ### Server Configuration
