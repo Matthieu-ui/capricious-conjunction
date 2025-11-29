@@ -41,6 +41,15 @@ waitForPort = 5000
 [workflows.workflow.metadata]
 outputType = "webview"
 
+[[workflows.workflow]]
+name = "git push origin master"
+mode = "sequential"
+author = 6292784
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "git push origin master"
+
 [deployment]
 deploymentTarget = "static"
 build = ["npm", "run", "build"]
