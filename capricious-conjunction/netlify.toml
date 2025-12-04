@@ -8,10 +8,6 @@
 [context.production]
   command = "pnpm install && pnpm run build"
 
-[[plugins]]
-  package = "@netlify/plugin-lighthouse"
-  enabled = false
-
 [[redirects]]
   from = "/*"
   to = "/404.html"
