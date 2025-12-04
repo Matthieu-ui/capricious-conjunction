@@ -1,6 +1,5 @@
 ---
 import PageLayout from "@/layouts/Base";
-import { Image } from "@astrojs/image/components";
 import aboutImg from "../../public/mattweb4.gif";
 
 const meta = {
@@ -88,7 +87,7 @@ const meta = {
       </b>
     </p>
     <div class="flex justify-center">
-      <Image src={aboutImg} alt="Matt" class="shadow-lg rounded-full brightness-200" />
+      <img src={aboutImg.src} alt="Matt" class="shadow-lg rounded-full brightness-200" />
     </div>
   </div>
 </PageLayout>

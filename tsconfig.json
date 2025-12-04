@@ -1,6 +1,7 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
+    "verbatimModuleSyntax": true,
     "baseUrl": ".",
     "paths": {
       "@/components/*": [
@@ -22,9 +23,7 @@
         "src/site.config.ts"
       ]
     },
-    "types": [
-      "@astrojs/image/client"
-    ],
+    "types": [],
     "jsx": "react-jsx",
     "jsxImportSource": "react"
   },
