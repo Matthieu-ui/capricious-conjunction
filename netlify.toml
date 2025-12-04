@@ -1,12 +1,13 @@
 [build]
-  command = "pnpm install && pnpm run build"
+  command = "pnpm run build"
   publish = "dist"
 
 [build.environment]
   NODE_VERSION = "18.12.0"
+  NODE_ENV = "production"
 
-[context.production]
-  command = "pnpm install && pnpm run build"
+[context.production.environment]
+  NODE_VERSION = "18.12.0"
 
 [[redirects]]
   from = "/*"
