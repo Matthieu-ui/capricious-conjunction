@@ -1,0 +1,14 @@
+[build]
+  command = "pnpm install && pnpm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "18.12.0"
+
+[context.production]
+  command = "pnpm install && pnpm run build"
+
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404

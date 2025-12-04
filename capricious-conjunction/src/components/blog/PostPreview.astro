@@ -1,0 +1,59 @@
+---
+import type { IElement, MDXInstance } from "@/data/shared";
+import type { Post } from "@/data/posts";
+import { Icon } from 'astro-icon'
+
+
+interface Props extends IElement {
+	post: MDXInstance<Post>;
+	withDesc?: boolean;
+
+	
+}
+
+//icons
+
+
+const icons = {
+  react: "mdi:react",
+  supabase: "simple-icons:supabase",
+  node: "mdi:nodejs",
+  tailwind: "mdi:tailwind",
+  css: "cib:css3-shiled",
+  php: "mdi:language-php",
+  sql: "simple-icons:postgresql",
+  html: "cib:html5-shield",
+  astro: "simple-icons:astro",
+  rss: "mdi:rss",
+  glitch: 'simple-icons:glitch',
+  digitalocean: 'simple-icons:digitalocean',
+  bot: 'carbon:bot',
+
+
+
+};
+
+
+
+
+const { post, as: Element = "div", withDesc = false } = Astro.props;
+const postType = post.frontmatter.type;
+const postTypes = postType.split(",").map((type) => type.trim());
+
+const postTypeIcons = postTypes.map((type) => icons[type as keyof typeof icons] || null);
+
+---
+
+<post postType={postTypeIcons} class="flex min-w-[120px] ">
+	{postTypeIcons.map((icon, index) => (
+	  <Icon key={index} name={icon} title ={icon?.split(":")[1]} class="w-6 h-6 text-[var(--theme-text)]" />
+	))}
+  </post>
+
+
+<Element>
+	<a href={post.url} class="hover:underline" rel="prefetch">
+		{post.frontmatter.title}
+	</a>
+</Element>
+{withDesc && <q class="block italic line-clamp-3">{post.frontmatter.description}</q>}

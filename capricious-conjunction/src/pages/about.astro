@@ -1,0 +1,101 @@
+---
+import PageLayout from "@/layouts/Base";
+import aboutImg from "../../public/mattweb4.gif";
+
+const meta = {
+  title: "About",
+  description:
+    "I'm a full-stack developer and carpenter at Uresco Construction Materials, specializing in warehouse management, 3D visualization, and geolocation technology.",
+};
+---
+
+<PageLayout meta={meta}>
+  <div class="space-y-4 sm:space-y-2 ">
+    <h1 class="title">About</h1>
+
+
+
+<p class="font-bold">About Me</p>
+<ul class="list-inside list-disc">
+  <li>
+    I bridge software, construction, and business. At <strong>Uresco Construction Materials</strong>, I combine hands-on building experience, full-stack development, and operations management to improve warehouse, inventory, logistics, and sales workflows.
+  </li>
+  <li>
+    My expertise spans full-stack web development, system operations, business process optimization, warehouse management systems, inventory optimization, geolocation-based logistics, 3D visualization, and Web3/blockchain development on the Hedera network.
+  </li>
+  <li>
+    For Web3 projects, I develop dynamic NFTs, micro-payment systems, and tools that connect real-world activity to on-chain data—exploring how blockchain can enhance transparency and efficiency in business operations.
+  </li>
+  <li>
+    I'm passionate about creating practical, user-focused solutions that connect physical construction materials with digital tools, improve operational efficiency, and drive business value. Whether it's writing code, building with my hands, managing systems, or architecting solutions, I tackle technical challenges with a business perspective.
+  </li>
+</ul>
+        </div>
+
+        <div class="space-y-4 sm:space-y-2">
+    <hr class=" m-4 "/>
+                <h2 class="title pt-4">Skills & Experience</h2>
+                <ul class="list-inside list-disc">
+                        <li>
+                                <b class="font-sans">Web Development</b> - Full-stack development with JavaScript/TypeScript, React, Astro, Node.js, and modern frameworks
+                        </li>
+                        <li>
+                                <b class="font-sans">System Operations</b> - Infrastructure, deployment, operational management, and day-to-day systems work
+                        </li>
+                        <li>
+                                <b class="font-sans">Business Process Optimization</b> - Improving warehouse, inventory, logistics, and sales workflows with software solutions
+                        </li>
+                        <li>
+                                <b class="font-sans">Web3 & Blockchain</b> - Hedera network development, dynamic NFTs, micro-payment systems, smart contracts, and on-chain data tools
+                        </li>
+                        <li>
+                                <b class="font-sans">3D & Visualization</b> - Three.js, WebGL, spatial visualization for construction and materials management
+                        </li>
+                        <li>
+                                <b class="font-sans">Geolocation & Mapping</b> - Location-based services, GPS tracking, mapping integrations for logistics and field operations
+                        </li>
+                        <li>
+                                <b class="font-sans">Warehouse & Inventory Management</b> - Database design, inventory systems, material tracking, and supply chain optimization
+                        </li>
+                        <li>
+                                <b class="font-sans">Building & Construction</b> - Hands-on experience in building and construction, lumber expertise, building materials knowledge
+                        </li>
+                </ul>
+                <hr class=" m-4 "/>
+                <h2 class="title pt-4">Education</h2>
+                <ul class="list-inside list-disc">
+                        <li>
+                                <b class="font-sans">Seattle Central</b> - Seattle, WA
+                                <p>
+                                        <b class="font-sans">Web Development AAS-T</b> - 2023
+                                </p>
+                        </li>
+                        <li>
+                                <b class="font-sans">Code Path</b> - remote
+                                <p>
+                                        <b class="font-sans">Intermediate Web Development</b> - 2023
+                                </p>
+                        </li>
+                </ul>
+
+
+
+    <!-- image center -->
+    <p class="flex justify-center font-sans">
+      You can Email me here @ <b
+        ><a class="hover:underline" href="mailto:matthieufelker@skiff.com">Matthieufelker@skiff.com</a>
+      </b>
+    </p>
+    <div class="flex justify-center">
+      <img src={aboutImg.src} alt="Matt" class="shadow-lg rounded-full brightness-200" />
+    </div>
+  </div>
+</PageLayout>
+
+<style>
+  .mattAvi {
+    width: 350px;
+    border-radius: 100%;
+    filter: brightness(5);
+  }
+</style>

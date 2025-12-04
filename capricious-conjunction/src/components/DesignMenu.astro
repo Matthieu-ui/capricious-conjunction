@@ -1,0 +1,31 @@
+---
+const url = new URL(Astro.request.url);
+const designLinks = [
+  {
+    title: "Graphic Design",
+    path: "/posts/ad-design",
+  },
+  {
+    title: "Motion Graphics",
+    path: "#",
+  },
+  {
+    title: "Digital Art",
+    path: "#",
+  },
+];
+---
+
+{
+  designLinks.map((link) => (
+    <a
+      href={link.path}
+      class="flex flex-wrap items-center gap-x-2 [&_q]:w-full hover:underline"
+      aria-current={url.pathname === link.path ? "page" : false}
+      rel="prefetch"
+    >
+      {link.title}
+    </a>
+  ))
+}
+

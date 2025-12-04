@@ -1,0 +1,23 @@
+---
+const url = new URL(Astro.request.url);
+const designLinks = [
+  {
+    title: "All Things PHP",
+    path: "https://matthieufelker.vqb.rzj.mybluehost.me/it261/website/index.php",
+  }
+];
+---
+
+{
+  designLinks.map((link) => (
+    <a
+      href={link.path}
+      class="flex flex-wrap items-center gap-x-2 [&_q]:w-full hover:underline"
+      aria-current={url.pathname === link.path ? "page" : false}
+      rel="prefetch"
+    >
+      {link.title}
+    </a>
+  ))
+}
+

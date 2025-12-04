@@ -1,0 +1,85 @@
+---
+	import { Icon } from 'astro-icon'
+---
+
+<script>
+	import siteConfig from "@/site-config";
+	import { elementHasClass } from "@/utils";
+
+
+	type ThemeState = "light" | "dark";
+
+	document.addEventListener("DOMContentLoaded", () => {
+		const root = document.documentElement;
+		const osColorScheme = window.matchMedia("(prefers-color-scheme: dark)");
+		const colorThemeMetaTag = document.querySelector("meta[name='theme-color']") as Element;
+		const toggleThemeButton = document.getElementById("toggle-theme") as HTMLButtonElement;
+
+		// Initailise state from document.documentElement
+		let isDarkState = elementHasClass(root, "dark");
+
+		const toggleDarkMode = () => {
+			let themeMode: ThemeState = isDarkState ? "dark" : "light";
+
+			// root add/retain dark class when isDarkState === true, remove/don't add if false
+			root.classList.toggle("dark", isDarkState);
+
+			// Keep localStore in sync
+			if (localStorage.getItem("theme") !== themeMode) {
+				localStorage.setItem("theme", themeMode);
+			}
+
+			// set the theme in head
+			colorThemeMetaTag.setAttribute(
+				"content",
+				siteConfig[isDarkState ? "themeColorDark" : "themeColorLight"]
+			);
+
+			// set data-theme on button
+			toggleThemeButton.dataset.theme = themeMode;
+		};
+
+		// Initial setting
+		toggleDarkMode();
+
+		// Listen for OS changes
+		osColorScheme.addEventListener("change", (evnt) => {
+			isDarkState = evnt.matches;
+			toggleDarkMode();
+			console.log("OS theme changed to", evnt.matches ? "dark" : "light");
+		});
+		// Theme Btn click
+		toggleThemeButton.addEventListener("click", () => {
+			isDarkState = !isDarkState;
+			toggleDarkMode();
+			console.log("Theme changed to", isDarkState ? "dark" : "light");
+		});
+	});
+</script>
+
+<button
+	type="button"
+	id="toggle-theme"
+	class="group relative ml-auto h-9 w-9 rounded-md bg-zinc-200 p-2 ring-zinc-400 transition-all hover:ring-2 dark:bg-zinc-900 mr-5"
+	aria-label="Toggle Dark Mode"
+	data-theme=""
+>
+
+	<Icon name="sunAni" id="sun-svg"	aria-hidden="true"
+	focusable="false"
+	stroke-width="1.5"
+	viewBox="0 0 24 24"
+
+ class=" absolute top-1/2 left-1/2 h-7 w-7 -translate-x-1/2 -translate-y-1/2 scale-0 opacity-0 transition-all group-data-[theme=dark]:scale-100 group-data-[theme=dark]:opacity-100 rotate-180" />
+
+	<Icon name="moonAni"  id="moon-svg"	aria-hidden="true"
+
+		focusable="false"
+		stroke-width="1.5"
+		viewBox="0 0 24 24"
+
+class="absolute top-1/2 left-1/2 h-7 w-7 -translate-x-1/2 -translate-y-1/2 scale-0 opacity-0 transition-all group-data-[theme=light]:scale-100 group-data-[theme=light]:opacity-100" />
+
+	
+
+</button>
