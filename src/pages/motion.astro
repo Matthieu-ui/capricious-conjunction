@@ -1,0 +1,15 @@
+---
+import PageLayout from "@/layouts/Base";
+import MotionExamples from "../components/react/MotionExamples.jsx";
+---
+
+<PageLayout meta={{ title: "Motion", description: "Motion graphics examples built with Framer Motion and React." }}>
+  <section class="mb-8">
+    <h1 class="title text-2xl mb-3">Motion Graphics</h1>
+    <p class="text-sm opacity-70">
+      Interactive animation examples built with <a class="hover:underline" href="https://www.framer.com/motion/" target="_blank" rel="noopener noreferrer">Framer Motion</a>. Click and hover to interact.
+    </p>
+  </section>
+
+  <MotionExamples client:load />
+</PageLayout>

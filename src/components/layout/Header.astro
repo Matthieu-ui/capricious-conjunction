@@ -1,5 +1,4 @@
 ---
-import ThemeToggle from "../ThemeToggle.astro";
 import Icon from "astro-icon";
 
 const url = new URL(Astro.request.url);
@@ -16,6 +15,10 @@ const menuLinks = [
   {
     title: "Portfolio",
     path: "/posts",
+  },
+  {
+    title: "Motion",
+    path: "/motion",
   },
 ];
 ---
@@ -85,7 +88,6 @@ rounded-full  ">
       }
     </nav>
   </div>
-  <ThemeToggle />
   <button
     id="toggle-navigation-menu"
     class="group relative ml-8 h-7 w-7 sm:invisible sm:hidden"

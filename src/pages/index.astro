@@ -4,7 +4,6 @@ import PostPreview from "@/components/blog/PostPreview";
 import SocialList from "@/components/SocialList";
 import { sortMDByDate } from "@/utils";
 import type { Post } from "@/data/posts";
-import { Icon } from "astro-icon";
 const MAX_POSTS = 10;
 const allPosts = await Astro.glob<Post>("./posts/*.mdx");
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
@@ -12,22 +11,34 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 ---
 
 <PageLayout meta={{ title: "Home" }}>
-  <section class="mb-8">
-    <h1 class="title text-2xl mb-4">Web & Systems Developer · Data Analytics · Automation</h1>
-    <p class="text-lg mb-4">
-      I bridge software, construction, and business. At <strong>Uresco Construction Materials</strong>, I combine full-stack development, hands-on building experience, and daily operations work to improve inventory management and sales workflows. Outside of work, I build Web3 applications and tools on the Hedera network that connect real-world activity to on-chain data.
+  <section class="mb-10">
+    <h1 class="title text-2xl mb-3">Matthieu Felker</h1>
+    <p class="opacity-60 text-sm mb-5">Web & Systems Developer · Data Analytics · Automation</p>
+    <p class="mb-6">
+      I bridge software, construction, and business. At <strong>Uresco Construction Materials</strong>, I build full-stack tools for warehouse management, inventory, and sales — while also exploring Web3 on the Hedera network.
     </p>
     <SocialList />
   </section>
 
-  <section class="mt-12">
-    <h2 class="title mb-4 text-xl">Current Focus</h2>
-    <p class="mb-4">
-      Currently focused on building solutions for Uresco Construction Materials. I'm developing solutions with my team for our warehouse management system, including a geolocation-based 3D visualization inventory tool, to optimize lumber and materials operations.
-    </p>
-    <p class="mb-4">
-      Check out my <a class="hover:underline" href="https://github.com/matthieu-ui" target="_blank" rel="noopener noreferrer">GitHub</a> for my open source work and previous projects.
-    </p>
+  <section class="mb-10">
+    <h2 class="title mb-3 text-lg">Now</h2>
+    <ul class="space-y-2 text-sm opacity-80">
+      <li>→ Geolocation-based 3D inventory visualization for lumber & materials</li>
+      <li>→ Warehouse management system tooling at Uresco</li>
+      <li>→ Open source on <a class="hover:underline" href="https://github.com/matthieu-ui" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+    </ul>
   </section>
 
+  {allPostsByDate.length > 0 && (
+    <section>
+      <h2 class="title mb-4 text-lg">Posts</h2>
+      <ul class="space-y-4">
+        {allPostsByDate.map((p) => (
+          <li>
+            <PostPreview post={p} />
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
 </PageLayout>
