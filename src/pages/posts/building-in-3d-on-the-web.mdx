@@ -1,0 +1,49 @@
+---
+layout: "@/layouts/BlogPost"
+title: Animating SVGs
+type: design, css, javascript
+publishDate: 25 March 2026
+description: "I built the header on this site as an animated SVG. Here's what that process looked like and what I learned about making SVG motion feel right."
+tags: [SVG, CSS, JavaScript, Design]
+---
+
+The header on this site is an animated SVG — a distorted mesh I built in Illustrator and brought to life with about ten lines of CSS.
+
+## The mesh in Illustrator
+
+I created the base shape as a distorted mesh in Illustrator. The mesh tool lets you warp a grid of paths — pulling anchor points to create organic, flowing distortion. Exported to SVG, it comes out as dozens of closely-spaced `path` elements that give it that dense, hand-drawn texture.
+
+{/* Add more detail here — what the mesh looked like, how you distorted it, any specific techniques */}
+
+## Getting it into the browser
+
+{/* How you exported from Illustrator, cleaned up the SVG, and loaded it via astro-icon */}
+
+## The animation — stroke-dasharray and stroke-dashoffset
+
+The whole animation is CSS. No JavaScript.
+
+```css
+.line-svg path {
+  stroke-dasharray: 5;
+  stroke-dashoffset: 10;
+  animation: dash 10s forwards infinite linear;
+}
+
+@keyframes dash {
+  from { stroke-dashoffset: 100; }
+  to   { stroke-dashoffset: 0; }
+}
+```
+
+`stroke-dasharray` breaks each path into dashes. `stroke-dashoffset` controls where those dashes start along the path. Animating the offset makes the dashes appear to flow — applied to all the mesh paths at once, it gives the whole header that moving, alive quality.
+
+## Why this works
+
+The density of the mesh paths is what makes it interesting. A single animating path would just be a marching line. Dozens of them running simultaneously, each slightly different in shape, creates something that reads more like texture or grain in motion.
+
+{/* Your thoughts on why the visual effect lands — the grain, the density, the speed */}
+
+## What I'd tweak
+
+{/* Anything you'd change — speed, stroke-width, the mesh itself */}

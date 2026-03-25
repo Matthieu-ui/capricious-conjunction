@@ -1,44 +1,191 @@
 ---
 import PageLayout from "@/layouts/Base";
-import PostPreview from "@/components/blog/PostPreview";
-import SocialList from "@/components/SocialList";
-import { sortMDByDate } from "@/utils";
-import type { Post } from "@/data/posts";
-const MAX_POSTS = 10;
-const allPosts = await Astro.glob<Post>("./posts/*.mdx");
-const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
-// import Gallery from "../components/react/Gallery.jsx";
+
+const projects = [
+  {
+    title: "CS2 Server Browser",
+    description: "Third-party Steam server browser built to streamline connecting to surf servers. Faster filtering, less friction than the in-game browser.",
+    stack: ["React", "Node", "Supabase", "Tailwind"],
+    status: "in progress",
+    href: "https://github.com/matthieu-ui",
+    external: true,
+  },
+  {
+    title: "oKaomoji Bot",
+    description: "Twitter bot that posts random kaomojis and text faces. Hosted on Glitch, kept alive with UptimeRobot.",
+    stack: ["Node", "Twitter API", "Glitch"],
+    status: "live",
+    href: "https://x.com/oKaomoji_npc",
+    external: true,
+  },
+  {
+    title: "3D Inventory Visualization",
+    description: "Geolocation-based spatial interface for tracking lumber and materials across a warehouse. Maps physical location to live inventory data.",
+    stack: ["Three.js", "WebGL", "Node"],
+    status: "in progress",
+    href: null,
+  },
+];
 ---
 
 <PageLayout meta={{ title: "Home" }}>
-  <section class="mb-10">
-    <h1 class="title text-2xl mb-3">Matthieu Felker</h1>
-    <p class="opacity-60 text-sm mb-5">Web & Systems Developer · Data Analytics · Automation</p>
-    <p class="mb-6">
-      I bridge software, construction, and business. At <strong>Uresco Construction Materials</strong>, I build full-stack tools for warehouse management, inventory, and sales — while also exploring Web3 on the Hedera network.
-    </p>
-    <SocialList />
-  </section>
+  <div class="page-wrap">
 
-  <section class="mb-10">
-    <h2 class="title mb-3 text-lg">Now</h2>
-    <ul class="space-y-2 text-sm opacity-80">
-      <li>→ Geolocation-based 3D inventory visualization for lumber & materials</li>
-      <li>→ Warehouse management system tooling at Uresco</li>
-      <li>→ Open source on <a class="hover:underline" href="https://github.com/matthieu-ui" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-    </ul>
-  </section>
+    <section class="intro">
+      <h1 class="title">Matthieu Felker</h1>
+      <p class="tagline">Developer · Designer · Builder</p>
+      <p class="bio">
+        I make things for the web — tools, experiments, interfaces that feel considered. Currently building at Uresco Construction Materials and working on a few projects on the side.
+      </p>
+    </section>
 
-  {allPostsByDate.length > 0 && (
     <section>
-      <h2 class="title mb-4 text-lg">Posts</h2>
-      <ul class="space-y-4">
-        {allPostsByDate.map((p) => (
-          <li>
-            <PostPreview post={p} />
+      <h2 class="section-label">Projects</h2>
+      <ul class="project-list">
+        {projects.map((p) => (
+          <li class="project">
+            <div class="project-header">
+              <span class="project-title">
+                {p.href && p.external ? (
+                  <a href={p.href} target="_blank" rel="noopener noreferrer" class="hover:underline">{p.title}</a>
+                ) : p.href ? (
+                  <a href={p.href} rel="prefetch" class="hover:underline">{p.title}</a>
+                ) : p.title}
+              </span>
+              <span class={`status ${p.status === "live" ? "live" : "wip"}`}>{p.status}</span>
+            </div>
+            <p class="project-desc">{p.description}</p>
+            <div class="stack">
+              {p.stack.map((s) => <span class="stack-item">{s}</span>)}
+            </div>
           </li>
         ))}
       </ul>
     </section>
-  )}
+
+
+  </div>
 </PageLayout>
+
+<style>
+  .page-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+
+  .intro {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .tagline {
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.4;
+  }
+
+  .bio {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    opacity: 0.8;
+    max-width: 52ch;
+  }
+
+  .section-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.35;
+    margin-bottom: 1.25rem;
+  }
+
+  /* Projects */
+  .project-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .project {
+    padding: 1.25rem 0;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .project:last-child {
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .project-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+  }
+
+  .project-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  .status {
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.1rem 0.45rem;
+    border-radius: 2px;
+  }
+
+  .status.live {
+    background: rgba(100, 220, 120, 0.12);
+    color: rgb(100, 220, 120);
+  }
+
+  .status.wip {
+    background: rgba(255, 255, 255, 0.06);
+    opacity: 0.5;
+  }
+
+  .project-desc {
+    font-size: 0.85rem;
+    line-height: 1.65;
+    opacity: 0.6;
+    max-width: 58ch;
+  }
+
+  .stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.2rem;
+  }
+
+  .stack-item {
+    font-size: 0.65rem;
+    letter-spacing: 0.06em;
+    opacity: 0.35;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 2px;
+    padding: 0.1rem 0.4rem;
+  }
+
+  /* Writing */
+  .post-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .post-list li {
+    font-size: 0.9rem;
+    opacity: 0.75;
+  }
+</style>

@@ -1,0 +1,64 @@
+---
+layout: "@/layouts/BlogPost"
+title: Building Motion Graphics on the Web in the Age of AI
+type: creative, javascript, css
+publishDate: 25 March 2026
+description: "Motion on the web is having a moment — and AI is changing who gets to make it and how. Some thoughts on where craft fits into that."
+tags: [Creative, JavaScript, CSS, Motion]
+---
+
+Something shifted. Motion graphics on the web used to be a niche skill — you needed to know GSAP internals, understand the browser's compositor, think in bezier curves. Now you can describe an animation to an AI and get working code back in seconds.
+
+That's genuinely good. And it changes things in ways that are worth thinking about.
+
+## what motion on the web actually is
+
+Web motion isn't After Effects. It's not video. It's closer to theater — everything is live, responsive to input, running on hardware you don't control, at a framerate that can drop mid-sentence.
+
+CSS handles a lot: transitions, keyframes, the new `@starting-style`, scroll-driven animations that are finally landing natively. For anything more complex you reach for JavaScript — GSAP, Motion, Framer Motion if you're in React land. WebGL if you want to go deep.
+
+The constraint is always the same: 16ms per frame. Miss that budget and the user feels it before they can name it. Something just feels wrong.
+
+## what AI is good at here
+
+Boilerplate. AI is extremely good at the boilerplate.
+
+GSAP timelines with staggered children — yes. CSS keyframe sequences — yes. Translating "fade in from below with a slight spring" into actual easing values — surprisingly yes.
+
+The stuff that used to take twenty minutes of documentation-reading now takes thirty seconds. That's real time back. And for developers who aren't deep in animation, it lowers the barrier enough that they actually try things instead of reaching for a pre-built library component and calling it done.
+
+## what AI is bad at here
+
+Taste. Feel. Knowing when to stop.
+
+AI generates motion that is technically correct and aesthetically forgettable. The easing is fine. The timing is reasonable. Nothing is offensive. Nothing is memorable either.
+
+The interesting decisions in motion design aren't "what are the keyframes" — they're "does this animation need to exist at all," "does this feel like the thing it's animating," "is this building tension or releasing it." Those are judgment calls that come from watching a lot of animation, caring about it, developing an opinion.
+
+That part doesn't accelerate. If anything it matters more now, because the floor rose. Everyone can generate adequate motion. The gap between adequate and considered is wider than it was.
+
+## orchestration is still hard
+
+The hardest thing in web motion isn't a single animation — it's a sequence. Scroll triggers that hand off to hover states that hand off to exit transitions. Components that animate in relation to each other across the page. Motion that responds to state without feeling mechanical.
+
+Orchestration requires understanding the whole system. What's mounted, what's visible, what the user just did. AI can write a piece of this but it rarely holds the full picture. You still need to be the one who understands how it all connects.
+
+## the tools worth knowing
+
+**GSAP** — still the standard for anything complex. The timeline model is genuinely good for thinking about sequenced motion. ScrollTrigger is the best scroll-driven animation tool available.
+
+**CSS scroll-driven animations** — native, no JS, finally real. Limited but fast and composited. Worth reaching for first when they fit.
+
+**Motion (formerly Framer Motion)** — if you're in React. The layout animation and shared element transition APIs are things that are very hard to do any other way.
+
+**WebGL / Three.js** — for when you need the GPU. Particle systems, shader-based effects, anything that needs to run at scale. Steep learning curve, different mental model, worth it for the right project.
+
+## where craft fits
+
+AI lowered the cost of execution. It didn't lower the value of judgment.
+
+The developers who will make the most interesting motion on the web are the ones who have strong opinions about what animation should feel like — and use AI to close the gap between that vision and working code faster than before.
+
+That's the shift. Not that the skill is obsolete. That the skill moved up a level. Less time on syntax, more time on intention.
+
+What do you want this thing to feel like? That question was always the real work. Now it's just more obviously the real work.

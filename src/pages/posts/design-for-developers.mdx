@@ -1,0 +1,54 @@
+---
+layout: "@/layouts/BlogPost"
+title: Design for Developers Who Actually Care
+type: design, css, typography
+publishDate: 25 March 2026
+description: "Not a design system tutorial. Rough notes on what actually moves the needle — type, space, restraint, and knowing when to stop."
+tags: [Design, CSS, Typography, UI]
+---
+
+Nobody taught me design. I picked it up sideways — staring at things that felt right until I could reverse-engineer why, then applying that, badly at first, then less badly.
+
+This isn't a tutorial. It's more like field notes.
+
+## type is doing most of the work
+
+Seriously. Before you touch color or layout, get the type right and most of the work is done.
+
+Line height around 1.6–1.75 for body. Tighter for headings. A font that has some personality but knows when to shut up. Size hierarchy that's obvious without being loud.
+
+The browser defaults are bad. Fix those first. Everything else is details.
+
+## space is a material
+
+Whitespace isn't empty. It's weight. It tells the eye where to go and how fast to get there.
+
+Padding that's too tight makes things feel anxious. Too loose and nothing holds together. You're looking for something that feels settled — like the content knows where it lives.
+
+Use a spacing scale and don't break it. 4, 8, 12, 16, 24, 32, 48. Pick one and be consistent. Inconsistent spacing is the fastest way to make something look unfinished even when the content is good.
+
+## dark backgrounds are harder than they look
+
+White text on black is too harsh. You want off-white — something around 85–90% opacity. Then build your hierarchy with opacity from there: 60% for secondary text, 40% for captions and labels, 20% for rules and dividers.
+
+Color on dark backgrounds tends to blow out. What looks balanced in Figma often looks neon in the browser. Desaturate more than you think you need to.
+
+## restraint is the skill
+
+The urge when you're building something is to keep adding. One more color, one more animation, one more font weight. The result is noise.
+
+The discipline is subtraction. What's the minimum that makes this feel intentional? That's usually the answer.
+
+Lo-fi isn't unfinished. It's precise. Every rough edge is where it is on purpose.
+
+## motion earns its place
+
+Animation should mean something or it should not exist. A fade that communicates state change is doing work. A bounce that plays on page load is asking for attention it hasn't earned.
+
+Start with zero motion. Add something only when you can explain what it communicates. If the explanation is "it looks cool," that's not good enough.
+
+## the browser devtools are the best design tool
+
+More than Figma. Because it's the real thing. Adjust spacing, swap fonts, change opacity — live, in context, on actual content. Then copy what worked into the CSS.
+
+Design in the browser as much as possible. The gap between mockup and implementation is where most good design decisions get lost.

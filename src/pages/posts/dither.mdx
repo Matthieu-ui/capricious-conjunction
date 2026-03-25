@@ -1,0 +1,44 @@
+---
+layout: "@/layouts/BlogPost"
+title: Dither
+type: design, images, creative
+publishDate: 25 March 2026
+description: "Dithering is an old compression trick that became an aesthetic. Why images look different depending on who's looking — and why that's interesting."
+tags: [Design, Images, Creative, CSS]
+---
+
+## What dithering actually is
+
+Dithering is a technique for simulating colors or tones that a display can't reproduce directly. Instead of showing a solid gray, you scatter black and white pixels in a pattern that tricks the eye into seeing gray from a distance. It comes from early computing and print — places where the palette was severely limited.
+
+The word itself comes from an old English word meaning to tremble or waver. Which is apt. The image is never quite settled. It's approximating something it can't fully express.
+
+## Why it looks different depending on how you see it
+
+This is the thing that makes dither unpredictable: it's resolution-dependent. A dithered image at full size is a careful pattern. Scaled down, those pixels cluster into noise. Scaled up, the pattern becomes obvious — almost architectural. On a high-DPI retina screen, the dots are tiny and the illusion holds. On a low-DPI screen, the pattern breaks down and you see the seams.
+
+It also reacts to the rendering pipeline. JPEG compression destroys dither patterns — the codec interprets the noise as artifact and smears it. PNG preserves it. GIF was built for it. A dithered GIF is doing what the format was designed for.
+
+## The aesthetic that came out of constraint
+
+What started as a technical workaround became a look. Zine culture, pixel art, lo-fi web design — dither carries connotations of something handmade, analog, slightly broken. It reads as intentional roughness. A rejection of the smooth gradients and infinite color depth that modern screens make easy.
+
+There's something honest about it. The image is showing you its seams. It's not pretending to be something it isn't.
+
+## Using it intentionally
+
+If you're reaching for dither as a design choice, a few things to consider:
+
+**Format matters.** PNG or GIF for anything you want to preserve the pattern. Never JPEG a dithered image.
+
+**Size matters.** Design at the size it will be displayed, or account for the fact that it will look different at other sizes. This isn't a bug — but it's something to decide about, not discover accidentally.
+
+**Display context matters.** A dithered image on a high-DPI screen is not the same image on a standard monitor. If the difference is meaningful to you, test both.
+
+**It compresses well.** A dithered image with a limited palette is often significantly smaller than a photographic equivalent. That was the original point. It's still a valid reason.
+
+## Why I find it interesting
+
+Dither is one of those techniques that sits at the edge of control. You make something, and then the viewing conditions finish it. The image is partly yours and partly whoever's looking at it, on whatever screen they have, at whatever size it renders.
+
+Most design tries to eliminate that variability. Dither leans into it.

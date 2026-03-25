@@ -1,101 +1,190 @@
 ---
 import PageLayout from "@/layouts/Base";
-import aboutImg from "../../public/mattweb4.gif";
 
 const meta = {
   title: "About",
   description:
-    "I'm a full-stack developer and carpenter at Uresco Construction Materials, specializing in warehouse management, 3D visualization, and geolocation technology.",
+    "Creative developer and builder — bridging code, design, construction, and Web3 to make things that feel different.",
 };
+
+const skills = [
+  { category: "Development", items: ["JavaScript / TypeScript", "React", "Astro", "Node.js", "Full-stack web"] },
+  { category: "Design & Art", items: ["UI/UX design", "Visual design", "Motion & interaction", "Typography", "Creative direction"] },
+  { category: "3D & Spatial", items: ["Three.js", "WebGL", "Spatial visualization", "Geolocation & mapping"] },
+  { category: "Web3", items: ["Hedera network", "Dynamic NFTs", "Micro-payments", "On-chain data tools"] },
+  { category: "Systems & Ops", items: ["Infrastructure", "Warehouse management", "Inventory systems", "Business process optimization"] },
+  { category: "Craft", items: ["Building & construction", "Lumber & materials", "Hands-on fabrication"] },
+];
 ---
 
 <PageLayout meta={meta}>
-  <div class="space-y-4 sm:space-y-2 ">
-    <h1 class="title">About</h1>
+  <div class="about-wrap">
 
+    <!-- Hero -->
+    <section class="hero-section">
+      <h1 class="title">Matthieu Felker</h1>
+      <p class="tagline">Developer · Designer · Builder</p>
+      <p class="bio">
+        I like making things that feel different. I'm drawn to the edges — where software meets physical space, where utility gets weird, where something works in a way you didn't expect.
+      </p>
+      <p class="bio">
+        I care about craft. The UX of a dashboard, the grain of a wood joint, the rhythm of an animation — the medium changes, the intention doesn't.
+      </p>
+    </section>
 
+    <!-- Skills -->
+    <section class="skills-section">
+      <h2 class="section-label">What I do</h2>
+      <div class="skills-grid">
+        {skills.map((group) => (
+          <div class="skill-group">
+            <p class="skill-category">{group.category}</p>
+            <ul>
+              {group.items.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </section>
 
-<p class="font-bold">About Me</p>
-<ul class="list-inside list-disc">
-  <li>
-    I bridge software, construction, and business. At <strong>Uresco Construction Materials</strong>, I combine hands-on building experience, full-stack development, and operations management to improve warehouse, inventory, logistics, and sales workflows.
-  </li>
-  <li>
-    My expertise spans full-stack web development, system operations, business process optimization, warehouse management systems, inventory optimization, geolocation-based logistics, 3D visualization, and Web3/blockchain development on the Hedera network.
-  </li>
-  <li>
-    For Web3 projects, I develop dynamic NFTs, micro-payment systems, and tools that connect real-world activity to on-chain data—exploring how blockchain can enhance transparency and efficiency in business operations.
-  </li>
-  <li>
-    I'm passionate about creating practical, user-focused solutions that connect physical construction materials with digital tools, improve operational efficiency, and drive business value. Whether it's writing code, building with my hands, managing systems, or architecting solutions, I tackle technical challenges with a business perspective.
-  </li>
-</ul>
+    <!-- Education -->
+    <section class="edu-section">
+      <h2 class="section-label">Education</h2>
+      <div class="edu-grid">
+        <div class="edu-item">
+          <span class="edu-year">2023</span>
+          <div>
+            <p class="edu-school">Seattle Central</p>
+            <p class="edu-degree">Web Development AAS-T · Seattle, WA</p>
+          </div>
         </div>
+        <div class="edu-item">
+          <span class="edu-year">2023</span>
+          <div>
+            <p class="edu-school">CodePath</p>
+            <p class="edu-degree">Intermediate Web Development · Remote</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <div class="space-y-4 sm:space-y-2">
-    <hr class=" m-4 "/>
-                <h2 class="title pt-4">Skills & Experience</h2>
-                <ul class="list-inside list-disc">
-                        <li>
-                                <b class="font-sans">Web Development</b> - Full-stack development with JavaScript/TypeScript, React, Astro, Node.js, and modern frameworks
-                        </li>
-                        <li>
-                                <b class="font-sans">System Operations</b> - Infrastructure, deployment, operational management, and day-to-day systems work
-                        </li>
-                        <li>
-                                <b class="font-sans">Business Process Optimization</b> - Improving warehouse, inventory, logistics, and sales workflows with software solutions
-                        </li>
-                        <li>
-                                <b class="font-sans">Web3 & Blockchain</b> - Hedera network development, dynamic NFTs, micro-payment systems, smart contracts, and on-chain data tools
-                        </li>
-                        <li>
-                                <b class="font-sans">3D & Visualization</b> - Three.js, WebGL, spatial visualization for construction and materials management
-                        </li>
-                        <li>
-                                <b class="font-sans">Geolocation & Mapping</b> - Location-based services, GPS tracking, mapping integrations for logistics and field operations
-                        </li>
-                        <li>
-                                <b class="font-sans">Warehouse & Inventory Management</b> - Database design, inventory systems, material tracking, and supply chain optimization
-                        </li>
-                        <li>
-                                <b class="font-sans">Building & Construction</b> - Hands-on experience in building and construction, lumber expertise, building materials knowledge
-                        </li>
-                </ul>
-                <hr class=" m-4 "/>
-                <h2 class="title pt-4">Education</h2>
-                <ul class="list-inside list-disc">
-                        <li>
-                                <b class="font-sans">Seattle Central</b> - Seattle, WA
-                                <p>
-                                        <b class="font-sans">Web Development AAS-T</b> - 2023
-                                </p>
-                        </li>
-                        <li>
-                                <b class="font-sans">Code Path</b> - remote
-                                <p>
-                                        <b class="font-sans">Intermediate Web Development</b> - 2023
-                                </p>
-                        </li>
-                </ul>
-
-
-
-    <!-- image center -->
-    <p class="flex justify-center font-sans">
-      You can Email me here @ <b
-        ><a class="hover:underline" href="mailto:matthieufelker@skiff.com">Matthieufelker@skiff.com</a>
-      </b>
-    </p>
-    <div class="flex justify-center">
-      <img src={aboutImg.src} alt="Matt" class="shadow-lg rounded-full brightness-200" />
-    </div>
   </div>
 </PageLayout>
 
 <style>
-  .mattAvi {
-    width: 350px;
-    border-radius: 100%;
-    filter: brightness(5);
+  .about-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  /* Hero */
+  .hero-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .tagline {
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.45;
+  }
+
+  .bio {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    opacity: 0.85;
+  }
+
+  /* Skills */
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.4;
+    margin-bottom: 1.25rem;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem 2rem;
+  }
+
+  .skill-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .skill-category {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    opacity: 0.9;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding-bottom: 0.35rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .skill-group ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .skill-group li {
+    font-size: 0.82rem;
+    opacity: 0.6;
+  }
+
+  /* Education */
+  .edu-section {
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding-top: 2rem;
+  }
+
+  .edu-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .edu-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: baseline;
+  }
+
+  .edu-year {
+    font-size: 0.72rem;
+    opacity: 0.3;
+    font-variant-numeric: tabular-nums;
+    min-width: 2.5rem;
+  }
+
+  .edu-school {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .edu-degree {
+    font-size: 0.8rem;
+    opacity: 0.5;
+    margin-top: 0.15rem;
+  }
+
+  /* Mobile */
+  @media (max-width: 560px) {
+    .skills-grid {
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    }
   }
 </style>
