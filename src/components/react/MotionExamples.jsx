@@ -393,15 +393,15 @@ function Oscilloscope() {
       const waveColor = dark ? "#00ff88" : "#007744";
       ctx.beginPath();
       ctx.strokeStyle = waveColor;
-      ctx.lineWidth = 1.5;
+      ctx.lineWidth = .50;
       ctx.shadowColor = waveColor;
       ctx.shadowBlur = dark ? 6 : 2;
       for (let x = 0; x < W; x++) {
-        const u = (x / W) * Math.PI * 4;
+        const u = (x / W) * Math.PI * 1;
         const y = H / 2 + (H / 2 - 8) * (
-          Math.sin(u + t.current) * 0.5 +
-          Math.sin(u * 2.3 + t.current * 1.7) * 0.3 +
-          Math.sin(u * 0.5 + t.current * 0.4) * 0.2
+          Math.sin(u + t.current) * 0.7 +
+          Math.sin(u * 1.3 + t.current * 5.7) * 0.3 +
+          Math.sin(u * 1.5 + t.current * 0.4) * 0.2
         );
         x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
       }
